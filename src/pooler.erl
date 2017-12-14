@@ -648,8 +648,8 @@ do_return_member(Pid, ok, #pool{name = PoolName,
     clean_group_table(Pid, Pool),
     case dict:find(Pid, AllMembers) of
         {ok, {_, free, _}} ->
-            Fmt = "pool '~s': ignored return of free member ~p",
-            error_logger:warning_msg(Fmt, [PoolName, Pid]),
+%             Fmt = "pool '~s': ignored return of free member ~p",
+%             error_logger:warning_msg(Fmt, [PoolName, Pid]),
             Pool;
         {ok, {MRef, CPid, _}} ->
             #pool{free_pids = Free, in_use_count = NumInUse,
